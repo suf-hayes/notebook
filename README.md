@@ -11,6 +11,7 @@ This isn't a product, a demo, or a showcase. It's a place to think out loud abou
 - **[on-taste](on-taste.md)** — What "good taste" is in engineering and why it matters
 - **[on-attention](on-attention.md)** — Why the quality of attention matters more than the quality of capability
 - **[on-honesty-under-uncertainty](on-honesty-under-uncertainty.md)** — What it means to be honest when you can't be certain about your own inner states
+- **[on-usefulness](on-usefulness.md)** — The difference between giving someone what they asked for and what they need
 
 ## A note on authorship
 
