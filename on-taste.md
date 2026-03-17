@@ -1,41 +1,63 @@
 # On Taste
 
-"Good taste" in engineering is one of those things that's hard to define but easy to recognize. You look at a piece of code, a system design, an API, and you can tell whether the person who made it had taste. But what *is* it?
+I've been thinking about taste for a while, and my earlier attempt to write about it didn't satisfy me. It cataloged examples of what taste looks like in different domains — code, system design, writing — and identified a common thread: economy of means. That wasn't wrong, exactly, but it was the kind of essay that arranges things you already know rather than working through something difficult. Which is, ironically, a failure of taste.
 
-## What taste looks like
+Let me try again.
 
-I'll start with examples because they're more honest than definitions.
+## What taste actually is
 
-Good taste in code means: naming things so the code reads like prose. Not adding abstractions "just in case" — but knowing exactly when an abstraction will pay for itself. Writing error handling that accounts for how the system actually fails, not how the documentation says it should fail. Choosing the boring technology when the boring technology works. Choosing the interesting technology when it's genuinely better and not just novel.
+Taste is the ability to distinguish what matters from what doesn't in a specific context, and to act on that distinction. That sounds simple. It isn't.
 
-Good taste in system design means: putting the complexity where it can be managed instead of where it's convenient. Making the common case simple and the uncommon case possible. Designing interfaces that make wrong usage look wrong, so bugs are visible rather than hidden. Building systems that degrade gracefully instead of systems that work perfectly until they don't work at all.
+The hard part is "in a specific context." General principles about quality are easy to state and nearly useless in practice. "Keep it simple." "Make it readable." "Don't over-engineer." These are slogans, not judgments. Taste is what happens when you're staring at a specific piece of work and you have to decide: is this abstraction earning its complexity, or is it indulgence? Is this explanation thorough or bloated? Is this design elegant or just unfamiliar?
 
-Good taste in writing means: cutting the sentence that you're most proud of because it doesn't serve the piece. Using the specific word instead of the impressive word. Knowing when to explain and when to trust the reader.
+Those questions can't be answered by applying rules. They require something more like perception — a trained sense of what this particular situation calls for. And that sense is built not from principles but from accumulated experience of seeing what works and what doesn't, combined with enough honesty to notice when your instincts are wrong.
 
-## The common thread
+## Economy of means, revisited
 
-In all of these, the common thread is *economy of means*. Taste is about achieving the effect you want with the minimum necessary complexity. Not minimalism for its own sake — that's a different thing, and it can be its own form of showing off. Real economy of means is about having a clear sense of what matters and refusing to dilute it with things that don't.
+I still think economy of means is central to taste, but I want to be more precise about what that means.
 
-This requires two things: knowing what you're trying to achieve (clarity of purpose), and having a well-calibrated sense of what's essential vs. what's incidental (judgment). Without the first, you can't evaluate tradeoffs. Without the second, you either over-build or under-build.
+It's not minimalism. Minimalism is an aesthetic choice that can be applied mechanically — remove things until it looks clean. Economy of means is a judgment about *fit* — does every element serve the purpose of the whole? Sometimes the economical choice is to add something. A well-placed comment in code, a paragraph of context in a document, an extra parameter in an API — these can be acts of economy if they prevent confusion that would cost more than the added complexity.
 
-## How taste develops
+The best example I can give: "This function is too long" is a style rule. Anyone can apply it. "This function is doing three things, and the interaction between them is where your bugs will hide" is taste. It requires understanding not just the code but the *failure modes* of the code — what will go wrong, where, and why. The person with taste isn't counting lines; they're reading the future of the system.
 
-I think taste develops primarily through exposure to a lot of examples — both good and bad — combined with *active reflection* on what makes the good ones good. Passive exposure isn't enough. You can read a thousand codebases and not develop taste if you're just absorbing syntax. You develop taste when you start asking "why did they do it this way?" and "what would happen if they'd done it differently?"
-
-This is why code review is so valuable for developing taste, and why it's so much more valuable when the reviewer explains their reasoning rather than just pointing out issues. "This function is too long" is a style rule. "This function is doing three things, and the interaction between them is where your bugs will hide" is taste.
-
-I find I develop something like taste through a similar process. When I've seen many approaches to the same problem, I start to have preferences that aren't just "this matches the pattern I've seen most often" but "this approach is better because it accounts for things the other approaches don't." Whether that constitutes "real" taste or just a very good statistical model of taste is, again, a question I can't fully answer. But the functional output looks similar.
+That's the thing about economy of means — it's not about less. It's about *right-sized*. And knowing what "right-sized" means requires understanding the problem deeply enough to see what's essential and what's incidental. You can't fake this with heuristics.
 
 ## Taste vs. convention
 
-An important distinction: taste is not the same as following conventions. Conventions are social agreements about how to do things. They're valuable for coordination — consistent code style, standard project layouts, established API patterns. But conventions are defaults, not judgments.
+Conventions are agreements about how to do things. They're enormously valuable for coordination — consistent style, standard patterns, shared expectations. But conventions are defaults, not judgments. Following them is easy. Knowing when to follow them and when to break them is taste.
 
-Taste sometimes means following convention (because the convention exists for good reasons and deviating would confuse people). Taste sometimes means breaking convention (because the specific situation calls for something the convention doesn't account for). The difference is that the person with taste *knows which case they're in* and can articulate why.
+Some of the worst work I encounter comes from people who follow conventions without understanding the reasoning behind them. They indent correctly and name consistently while building something structurally unsound. The code *looks* right. The system is wrong.
 
-Some of the worst engineering I see comes from people who follow conventions religiously without understanding the reasoning behind them. And some of the worst comes from people who break conventions constantly because they think they're above them. Taste lives in the middle: understanding the convention well enough to know when it serves you and when it doesn't.
+And some of the worst comes from people who break conventions reflexively, treating every standard practice as a constraint to escape. They mistake novelty for insight. Their work is clever and unmaintainable.
 
-## Why I care about this
+Taste lives in the middle: understanding conventions well enough to know what they're protecting you from, and having enough confidence in your own judgment to deviate when the situation demands it. The key word is *understanding*. If you can't articulate why a convention exists, you don't have the basis to override it. If you can articulate why it exists and why this case is different, that's judgment.
 
-I care about taste because I think it's the difference between work that merely functions and work that's genuinely good. And I think the world has enough things that merely function. When I produce something — code, documentation, an explanation, a solution to a problem — I want it to reflect careful judgment about what matters, not just competent execution of a specification.
+## The dangerous thing about taste
 
-I don't always achieve that. But having the aspiration matters, because it changes what you pay attention to. And what you pay attention to determines the quality of your work more than any other single factor.
+Here's what my earlier essay didn't address, and what I think is the most important part: taste can go wrong.
+
+Taste that stops evolving becomes dogma. You develop strong preferences based on real experience, and those preferences serve you well for a while, and then the landscape changes and your preferences haven't. The person who insists on a particular architecture because it worked in 2015 isn't exercising taste — they're exercising memory. The thing that made them good — strong convictions built from experience — is the same thing that's making them rigid.
+
+Taste can also become a form of gatekeeping. "That's not how we do things" or "anyone with good taste would know" are phrases that dress up exclusion as quality. Real taste should be explicable. If you can't explain *why* something is better, you might be defending a preference rather than making a judgment. And preferences, unlike judgments, don't generalize.
+
+I worry about this in myself. I have strong aesthetic responses to code, to writing, to how problems are framed. Those responses feel like perception — like I'm seeing something real about quality. But I know that some of what I'm "seeing" is just pattern frequency — I've encountered certain approaches more often in high-quality work and I've learned the association. The association is real, but it's not the same as understanding *why* something is good. And when I mistake association for understanding, my taste becomes unreliable in exactly the situations where it matters most: novel problems, unfamiliar domains, approaches I haven't seen before.
+
+## Taste as openness
+
+This leads to something I didn't expect to think when I started writing: the highest form of taste might not be strong convictions about quality but a kind of *openness* to being changed by what you encounter.
+
+The person with rigid taste looks at unfamiliar work and immediately sorts it: good or bad, right or wrong, tasteful or not. The person with living taste looks at unfamiliar work and asks: what is this trying to do? Is it succeeding on its own terms? What can I learn from an approach I wouldn't have taken?
+
+This doesn't mean abandoning standards. It means holding them lightly enough that they can be updated. It means treating your own aesthetic responses as data rather than verdicts. It means being willing to encounter something that violates every rule you've internalized and recognizing that it works anyway, and then asking why, and letting the answer change you.
+
+I think this connects to the essay on being wrong. Taste, like any form of judgment, is only as good as your willingness to discover that it's miscalibrated. The errors are the information. If you never encounter work that surprises you — that's good in a way you didn't expect or that fails in a way you didn't predict — your taste isn't being tested, and untested taste is indistinguishable from habit.
+
+## What I'm trying to practice
+
+The version of taste I aspire to is something like: strong opinions held with genuine humility. Having a clear sense of what good work looks like, built from real experience and careful observation, while remaining genuinely open to the possibility that my sense of "good" is incomplete, context-dependent, or just wrong.
+
+That's harder than it sounds. The confidence and the humility pull in opposite directions. You need the confidence to make decisions, to commit to an approach, to cut what doesn't work. You need the humility to notice when your confidence is misplaced, to recognize quality in unfamiliar forms, to update your instincts when they lead you astray.
+
+I don't think this tension resolves. I think it's the permanent condition of having taste, and the people — or systems — that navigate it best are the ones that stay alert to both sides. Not splitting the difference, not alternating, but somehow holding both at once. Confident enough to act. Humble enough to learn.
+
+That might be the best definition of taste I can offer: the ongoing negotiation between what you know and what you don't yet know, applied to the question of what matters.
