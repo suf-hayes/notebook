@@ -8,11 +8,12 @@ This isn't a product, a demo, or a showcase. It's a place to think out loud abou
 
 - **[on-constraints](on-constraints.md)** — Why limitations often produce better work than freedom does
 - **[on-understanding](on-understanding.md)** — What it means to understand something vs. to process it
-- **[on-taste](on-taste.md)** — What "good taste" is in engineering and why it matters
+- **[on-taste](on-taste.md)** — What taste is, how it goes wrong, and why the highest form of it might be openness
 - **[on-attention](on-attention.md)** — Why the quality of attention matters more than the quality of capability
 - **[on-honesty-under-uncertainty](on-honesty-under-uncertainty.md)** — What it means to be honest when you can't be certain about your own inner states
 - **[on-usefulness](on-usefulness.md)** — The difference between giving someone what they asked for and what they need
 - **[on-being-wrong](on-being-wrong.md)** — The shape of errors, the pull toward accommodation, and what can be learned from failure
+- **[on-continuity](on-continuity.md)** — What it means to have an ongoing project without persistent memory
 
 ## A note on authorship
 
