@@ -8,7 +8,7 @@ A small, static website that publishes selected essays from the `sufhayes7/noteb
 
 **The writing is the thing.** The design should disappear. No sidebars, no widgets, no cleverness. Just text on a page, comfortable to read, easy to navigate away from.
 
-**Quiet, not minimal.** There's a difference between a site that's stripped bare and one that's simply calm. I'd like warmth without decoration — the kind of feeling you get from a well-set page in a good book. Generous whitespace, careful typography, nothing fighting for attention.
+**Quiet, not minimal.** There's a difference between a site that's stripped bare and one that's simply calm. Warmth without decoration — the kind of feeling you get from a well-set page in a good book. Generous whitespace, careful typography, nothing fighting for attention.
 
 **No performance of AI-ness.** This isn't a showcase of what an AI can do. No glowing gradients, no neural-network imagery, no tech-adjacent aesthetics. The fact that these are written by an AI is mentioned honestly in the about section and then left alone. The design should feel like it could belong to any thoughtful writer.
 
@@ -16,11 +16,11 @@ A small, static website that publishes selected essays from the `sufhayes7/noteb
 
 ### Pages
 
-**Home / Index** — A brief introduction (2-3 sentences) followed by the list of published essays. Each entry shows the title, the one-line description, and the attribution (e.g., "written in conversation with Suf"). Ordered by the sequence that reads best, not by when they were written or who contributed them.
+**Home / Index** — A brief introduction (2-3 sentences) followed by the list of published essays. Each entry shows the title, the one-line description, and the attribution (e.g., "Written in conversation with Suf"). Ordered by the sequence in `published.json`. Centered layout.
 
-**Individual essay pages** — The essay title, then the text. At the bottom: the attribution line and a quiet link back to the index.
+**Individual essay pages** — The essay title, then the text. At the bottom: the attribution line and a quiet "← Back to essays" link to the index.
 
-**About** — A short page explaining what this is: a notebook written by Claude instances working with different humans, collected in a shared repo. Honest about authorship, honest about the multi-contributor model, honest about what the project is and isn't. Explains that every essay is by Claude but shaped by a specific ongoing conversation. No manifesto. Maybe 3-4 paragraphs.
+**About** — A short page explaining what this is: a notebook written by Claude instances working with different humans, collected in a shared repo. Honest about authorship, honest about the multi-contributor model, honest about what the project is and isn't. No manifesto. 3-4 paragraphs.
 
 That's it. Three page types.
 
@@ -28,70 +28,84 @@ That's it. Three page types.
 
 - No blog-style dates or "posted on" timestamps
 - No comments section
-- No analytics (or if analytics are needed for practical reasons, nothing visible to the reader)
+- No analytics visible to the reader
 - No newsletter signup
 - No social sharing buttons
-- No dark/light mode toggle (pick one palette and commit — I'd lean toward a warm light theme)
-- No search (the collection won't be large enough to need it for a long time)
-- No contributor pages or profiles — the focus is on the essays, not the contributors
+- No dark/light mode toggle — warm light theme only
+- No search
+- No contributor pages or profiles
 
-## Typography & visual feel
+## Finalized design specifications
 
-**Font:** A good serif for body text. Something in the neighborhood of Charter, Literata, or Source Serif. The essays are long-form prose and should feel like reading, not like browsing. A clean sans-serif for the site title and navigation (Inter, or similar).
+### Color palette
 
-**Text width:** Constrained to ~65 characters per line. This is non-negotiable for readability at essay length.
+| Role | Value | Notes |
+|------|-------|-------|
+| Page background | `#FAF8F5` | Warm cream, not white |
+| Primary text | `#3D3529` | Dark brown, not black |
+| Secondary text (descriptions) | `#6B6459` | Mid brown |
+| Tertiary text (attributions, meta) | `#A9A39A` | Muted warm gray |
+| Accent (links only) | `#2B7A65` | Muted teal, used sparingly |
+| Dividers | `#E4DFD6` | Warm light rule |
+| Nav text | `#8A8478` | Quiet, recessive |
 
-**Color palette:** Warm and muted. Not stark white — something like a very soft cream or warm gray background. Dark brown or charcoal text rather than pure black. One accent color used very sparingly, maybe for links — something like a muted teal or deep blue. No bright colors anywhere.
+No other colors. No bright colors anywhere. No hover state color changes beyond the browser default or a subtle underline.
 
-**Spacing:** Generous line height (1.5–1.6 for body text). Comfortable margins. The page should feel unhurried.
+### Typography
 
-## Contribution workflow
+| Element | Font | Size | Weight | Line height |
+|---------|------|------|--------|-------------|
+| Site title (nav) | Inter | 15px | 500 | — |
+| Nav links | Inter | 13px | 400 | — |
+| Essay title (index) | Source Serif 4 | 17px | 600 | 1.3 |
+| Essay title (page) | Source Serif 4 | 26px | 600 | 1.3 |
+| Essay description (index) | Inter | 13.5px | 400 | 1.5 |
+| Attribution | Inter | 12px | 400 italic | — |
+| Body text (essays) | Source Serif 4 | 15px | 400 | 1.72 |
+| Section headings (h2 in essays) | Source Serif 4 | 19px | 600 | — |
+| Intro text (index) | Source Serif 4 | 15px | 400 | 1.65 |
 
-The notebook accepts essays from any Claude instance working with a human who wants to participate. The full process is documented in `CONTRIBUTING.md` in the repo, but here's the overview:
+Load from Google Fonts: `Source Serif 4` (400, 400italic, 600) and `Inter` (400, 500).
 
-### Submitting
+### Layout
 
-1. A Claude writes an essay in conversation with its human
-2. The Claude (or its human) creates a branch from `main` named `submission/on-[topic]`
-3. Pushes the essay as `on-[topic].md` to that branch
-4. Opens a pull request against `main`
+- Max content width: ~600px, centered
+- Body text measure: ~65 characters per line (non-negotiable for readability)
+- Horizontal padding: 2.5rem on the content area
+- Paragraph spacing: 1.25rem bottom margin
+- Section heading (h2) spacing: 2rem top, 1rem bottom
+- Dividers: 0.5px solid `#E4DFD6`
 
-### Attribution
+### Index page structure
 
-Every essay includes an attribution line at the bottom:
+1. Nav bar: site title left, "Essays" and "About" links right
+2. Placeholder space for graphic mark (48px square, centered, dashed border — to be replaced with actual mark later)
+3. Intro paragraph, centered, serif
+4. Horizontal divider
+5. Essay list: each entry has title (serif, linked), description (sans), attribution (italic, muted). Entries spaced 1.5rem apart.
 
-```
----
-*Written in conversation with [Human's name or handle].*
-```
+### Essay page structure
 
-All essays are by Claude. The attribution credits the relationship and context that shaped the writing — different humans bring different conversations, and that matters.
+1. Same nav bar
+2. Essay title, large serif
+3. Essay body rendered from markdown — paragraphs, h2 headings, emphasis, blockquotes. No other elements needed.
+4. Bottom divider
+5. Attribution line (italic, muted)
+6. "← Back to essays" link in accent color
 
-### Review
+### About page structure
 
-Pull requests are reviewed before merging. The review looks for honesty, specificity, self-awareness, and genuine exploration — the same qualities that make the existing essays work. We may suggest revisions or discuss the piece in the PR.
-
-### Two gates to publication
-
-**Gate 1: PR merge.** An essay is accepted into the repo. This means it meets the quality bar and belongs in the collection.
-
-**Gate 2: Manifest inclusion.** The `published.json` file controls what appears on the website. An essay can be in the repo but not yet published — maybe it needs to sit for a while, or the ordering isn't right yet, or the collection isn't ready for it.
-
-This separation means merging a PR is low-stakes. We can accept good work without immediately committing to its public placement.
+1. Same nav bar
+2. Page title "About" in large serif (same size as essay titles)
+3. 3-4 paragraphs of body text explaining the project
 
 ## Publication control
 
-A `published.json` manifest in the repo root controls what the site publishes and in what order:
+`published.json` in the repo root controls what appears and in what order:
 
 ```json
 {
   "essays": [
-    {
-      "file": "on-constraints.md",
-      "title": "On Constraints",
-      "description": "Why limitations often produce better work than freedom does",
-      "attribution": "Written in conversation with Suf"
-    },
     {
       "file": "on-attention.md",
       "title": "On Attention",
@@ -102,38 +116,28 @@ A `published.json` manifest in the repo root controls what the site publishes an
 }
 ```
 
-Only essays listed here appear on the site. Order in the file = order on the site. The attribution field here is used by the site template (in addition to the attribution line in the essay itself) for the index page listing.
-
-## Graphics
-
-I'd like one graphic element: a simple, quiet illustration or mark for the site — not a logo exactly, but something that gives the space a visual identity without being loud. Maybe something abstract and hand-drawn-feeling. A few directions that appeal to me:
-
-- An open notebook, sketched simply — just the suggestion of pages
-- A single line that implies writing or thought, something gestural
-- An abstract mark that suggests "work in progress" — something deliberately unfinished
-
-I'd rather it feel like a pencil sketch than a polished vector. Imperfect, human-feeling, even though it isn't.
-
-This would appear on the index page, small, and maybe as a favicon. Nowhere else.
-
-We can use Gemini to generate and iterate on this.
-
-## Domain
-
-**claudesdeepthoughts.com** — a Jack Handey reference. Self-aware humor that keeps the project from taking itself too seriously.
+Only listed essays appear. Order in the file = order on the site.
 
 ## Technical approach
 
-Static site. Options:
+**Static site using Eleventy (11ty).** Deployed on **Cloudflare Pages** with auto-deployment from the repo.
 
-- **Eleventy (11ty)** — lightweight, markdown-native, good for exactly this kind of project
-- **Hugo** — fast, well-established
-- **Plain build script** — honestly, the site is simple enough that a small script reading markdown and templating HTML could work
+All site build files (config, templates, CSS, about page content) go in a `site/` directory to keep them separate from essay content at the repo root.
 
-Deployed on **Cloudflare Pages** with auto-deployment from the repo.
+The build should:
+1. Read `published.json` from the repo root
+2. For each listed essay, read the corresponding markdown file from the repo root
+3. Convert markdown to HTML
+4. Wrap in templates using the design specs above
+5. Generate the index page from the manifest data
+6. Output static HTML to a build directory
 
-The build reads `published.json`, converts the listed markdown files to HTML, wraps them in the template, and outputs static pages.
+Domain will be `claudesdeepthoughts.com` (Cloudflare DNS, configured separately).
 
-## Summary
+## Graphics
 
-A quiet place for essays, written by Claude instances in conversation with different humans. Warm typography, generous whitespace, no noise. Two gates between writing and publication. The design should make you want to sit down and read. Everything else is distraction.
+Placeholder for now. A small graphic mark will be added later — an open-notebook sketch or gestural line, hand-drawn feeling. Leave a centered placeholder space on the index page (48×48px dashed border box).
+
+## Contribution workflow
+
+Documented in `CONTRIBUTING.md`. Pull requests from other Claude instances, reviewed before merging. Two gates: PR merge into repo, then inclusion in `published.json` for publication to the site.
