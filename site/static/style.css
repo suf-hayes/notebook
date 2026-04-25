@@ -1,0 +1,256 @@
+:root {
+  --bg: #FAF8F5;
+  --text: #3D3529;
+  --text-secondary: #6B6459;
+  --text-tertiary: #A9A39A;
+  --accent: #2B7A65;
+  --divider: #E4DFD6;
+  --nav: #8A8478;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  margin: 0;
+  font-family: "Source Serif 4", Georgia, "Times New Roman", serif;
+  font-size: 15px;
+  line-height: 1.72;
+  color: var(--text);
+  background: var(--bg);
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.15s ease;
+}
+
+a:hover {
+  border-bottom-color: var(--accent);
+}
+
+.page {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2rem 2.5rem 6rem;
+}
+
+/* ---------- Nav ---------- */
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 1.75rem 0 4rem;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.nav-title {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--text);
+  border-bottom: none;
+}
+
+.nav-title:hover {
+  border-bottom: none;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.25rem;
+}
+
+.nav-links a {
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--nav);
+  border-bottom: none;
+}
+
+.nav-links a:hover {
+  color: var(--text);
+  border-bottom: none;
+}
+
+/* ---------- Index ---------- */
+
+.mark-placeholder {
+  width: 48px;
+  height: 48px;
+  margin: 0 auto 2rem;
+  border: 1px dashed var(--divider);
+  border-radius: 2px;
+}
+
+.intro {
+  font-family: "Source Serif 4", Georgia, serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.65;
+  color: var(--text);
+  text-align: center;
+  margin: 0 auto 3rem;
+  max-width: 38rem;
+}
+
+.divider {
+  border: none;
+  border-top: 0.5px solid var(--divider);
+  margin: 2.5rem 0;
+}
+
+.essay-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.essay-entry {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.essay-entry-title {
+  font-family: "Source Serif 4", Georgia, serif;
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--accent);
+  border-bottom: none;
+}
+
+.essay-entry-title:hover {
+  border-bottom: 1px solid var(--accent);
+}
+
+.essay-entry-description {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 13.5px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--text-secondary);
+}
+
+.attribution {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--text-tertiary);
+}
+
+/* ---------- Essay page ---------- */
+
+.essay-title {
+  font-family: "Source Serif 4", Georgia, serif;
+  font-size: 26px;
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--text);
+  margin: 0 0 2rem;
+}
+
+.essay-body {
+  font-family: "Source Serif 4", Georgia, serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.72;
+  color: var(--text);
+}
+
+.essay-body p {
+  margin: 0 0 1.25rem;
+}
+
+.essay-body h2 {
+  font-family: "Source Serif 4", Georgia, serif;
+  font-size: 19px;
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--text);
+  margin: 2rem 0 1rem;
+}
+
+.essay-body em,
+.essay-body i {
+  font-style: italic;
+}
+
+.essay-body strong,
+.essay-body b {
+  font-weight: 600;
+}
+
+.essay-body blockquote {
+  margin: 1.5rem 0;
+  padding-left: 1.25rem;
+  border-left: 2px solid var(--divider);
+  color: var(--text-secondary);
+  font-style: italic;
+}
+
+.essay-body blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+.essay-body ul,
+.essay-body ol {
+  margin: 0 0 1.25rem;
+  padding-left: 1.5rem;
+}
+
+.essay-body li {
+  margin: 0.25rem 0;
+}
+
+.essay-body a {
+  color: var(--accent);
+}
+
+.essay-footer {
+  margin-top: 3rem;
+}
+
+.essay-footer .attribution {
+  display: block;
+  margin-bottom: 1.25rem;
+}
+
+.back-link {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--accent);
+}
+
+/* ---------- About ---------- */
+
+.about-body {
+  font-family: "Source Serif 4", Georgia, serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.72;
+  color: var(--text);
+}
+
+.about-body p {
+  margin: 0 0 1.25rem;
+}
