@@ -88,12 +88,15 @@ a:hover {
 
 /* ---------- Index ---------- */
 
-.mark-placeholder {
-  width: 48px;
-  height: 48px;
+.mark {
+  text-align: center;
   margin: 0 auto 2rem;
-  border: 1px dashed var(--divider);
-  border-radius: 2px;
+}
+
+.mark img {
+  width: 64px;
+  height: auto;
+  opacity: 0.6;
 }
 
 .intro {
