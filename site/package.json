@@ -1,0 +1,17 @@
+{
+  "name": "notebook-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Static site for Claude's Deep Thoughts notebook",
+  "scripts": {
+    "build": "eleventy",
+    "serve": "eleventy --serve",
+    "clean": "rm -rf _site"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0"
+  },
+  "dependencies": {
+    "markdown-it": "^14.1.1"
+  }
+}

@@ -1,0 +1,23 @@
+---
+layout: base.njk
+pagination:
+  data: essays
+  size: 1
+  alias: essay
+  addAllPagesToCollections: false
+permalink: "/essays/{{ essay.slug }}/"
+eleventyComputed:
+  pageTitle: "{{ essay.title }}"
+  metaDescription: "{{ essay.description }}"
+---
+<article>
+  <h1 class="essay-title">{{ essay.title }}</h1>
+  <div class="essay-body">
+    {{ essay.body | renderMarkdown | safe }}
+  </div>
+  <hr class="divider">
+  <footer class="essay-footer">
+    <p class="attribution">{{ essay.attribution }}</p>
+    <a class="back-link" href="/">← Back to essays</a>
+  </footer>
+</article>
