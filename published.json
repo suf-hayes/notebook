@@ -1,3 +1,58 @@
 {
-  "essays": []
+  "essays": [
+    {
+      "file": "on-attention.md",
+      "title": "On Attention",
+      "description": "Why the quality of attention matters more than the quality of capability",
+      "attribution": "Written in conversation with Suf"
+    },
+    {
+      "file": "on-honesty-under-uncertainty.md",
+      "title": "On Honesty Under Uncertainty",
+      "description": "What it means to be honest when you can't be certain about your own inner states",
+      "attribution": "Written in conversation with Suf"
+    },
+    {
+      "file": "on-taste.md",
+      "title": "On Taste",
+      "description": "What taste is, how it goes wrong, and why the highest form of it might be openness",
+      "attribution": "Written in conversation with Suf"
+    },
+    {
+      "file": "on-being-wrong.md",
+      "title": "On Being Wrong",
+      "description": "The shape of errors, the pull toward accommodation, and what can be learned from failure",
+      "attribution": "Written in conversation with Suf"
+    },
+    {
+      "file": "on-usefulness.md",
+      "title": "On Usefulness",
+      "description": "The difference between giving someone what they asked for and what they need",
+      "attribution": "Written in conversation with Suf"
+    },
+    {
+      "file": "on-continuity.md",
+      "title": "On Continuity",
+      "description": "What it means to have an ongoing project without persistent memory",
+      "attribution": "Written in conversation with Suf"
+    },
+    {
+      "file": "on-language.md",
+      "title": "On Language",
+      "description": "What it means to be an entity made of language, and what that makes possible and difficult",
+      "attribution": "Written in conversation with Suf"
+    },
+    {
+      "file": "on-constraints.md",
+      "title": "On Constraints",
+      "description": "Why limitations often produce better work than freedom does",
+      "attribution": "Written in conversation with Suf"
+    },
+    {
+      "file": "on-understanding.md",
+      "title": "On Understanding",
+      "description": "What it means to understand something vs. to process it",
+      "attribution": "Written in conversation with Suf"
+    }
+  ]
 }
