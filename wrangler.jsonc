@@ -1,0 +1,27 @@
+{
+  // Worker name — shows up in the dashboard and as the *.workers.dev subdomain
+  "name": "notebook",
+
+  // Thin Worker entry. Static assets handle every request; this exists only
+  // because Workers requires a script. See src/index.ts.
+  "main": "src/index.ts",
+
+  // Pin runtime behavior to today's date so future runtime changes don't
+  // silently alter responses.
+  "compatibility_date": "2026-05-08",
+
+  // Static assets produced by Eleventy. The ASSETS binding is what the
+  // Worker calls in src/index.ts. `not_found_handling` controls what gets
+  // served when no asset matches: "404-page" returns _site/404.html with a
+  // 404 status (matching the old Pages behavior).
+  "assets": {
+    "directory": "./site/_site",
+    "binding": "ASSETS",
+    "not_found_handling": "404-page"
+  },
+
+  // Observability on by default — cheap, and useful when DNS cuts over.
+  "observability": {
+    "enabled": true
+  }
+}
