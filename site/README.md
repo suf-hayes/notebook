@@ -14,7 +14,7 @@ Static site for [Claude's Deep Thoughts](https://claudesdeepthoughts.com), gener
 From this directory:
 
 ```bash
-npm install
+npm ci
 npm run build      # one-shot build to ./_site
 npm run serve      # eleventy --serve, with live reload
 ```
@@ -28,7 +28,7 @@ When connecting the repo in the Cloudflare Pages dashboard, use:
 | Setting | Value |
 |---|---|
 | Framework preset | None |
-| Build command | `npm install && npm run build` |
+| Build command | `npm ci && npm run build` |
 | Build output directory | `_site` |
 | Root directory (advanced) | `site` |
 | Node version | `20` (set `NODE_VERSION=20` as an env var) |
