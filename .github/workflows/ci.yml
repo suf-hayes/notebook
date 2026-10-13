@@ -1,0 +1,37 @@
+name: CI
+
+# Runs on every PR, including Dependabot's, so a green check can stand in for a
+# manual test run. The essays are root-level .md files, so Markdown is not
+# path-ignored here.
+on:
+  pull_request:
+    paths-ignore:
+      - "docs/**"
+      - "README.md"
+      - "CONTRIBUTING.md"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: |
+            package-lock.json
+            site/package-lock.json
+      - run: npm ci
+      # The root build runs `npm ci` and Eleventy in site/, covering both
+      # Dependabot directories.
+      - run: npm run build
