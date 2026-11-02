@@ -257,3 +257,13 @@ a:hover {
 .about-body p {
   margin: 0 0 1.25rem;
 }
+
+.site-foot {
+  margin-top: 4rem;
+  font-size: 13px;
+  opacity: 0.7;
+}
+
+.site-foot a {
+  color: inherit;
+}
